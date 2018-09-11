@@ -2,6 +2,9 @@ import axios from "axios";
 
 const GET_USERS = "GET_USERS";
 const NEW_USERS = "NEW_USERS";
+const DELETE_USERS = "DELETE_USERS";
+const EDIT_USERS = "EDIT_USERS";
+const GET_LOC = "GET_LOC";
 
 export function getUsers() {
   return {
@@ -16,10 +19,32 @@ export function newUsers(name, email, phone_number, address) {
     payload: axios.post("/api/newUsers", { name, email, address, phone_number })
   };
 }
+
+export function deleteUsers(id) {
+  return {
+    type: DELETE_USERS,
+    payload: axios.delete(`/api/delete/${id}`)
+  };
+}
+
+export function editUsers(id, name, email, phone_number, address) {
+  return {
+    type: EDIT_USERS,
+    payload: axios.put(`/api/editUsers/${id}`)
+  };
+}
+
+export function getLoc(latLng) {
+  return {
+    type: GET_LOC,
+    payload: axios.post("/api/map", { latLng })
+  };
+}
 const initialState = {
   users: [],
   isLoading: false,
-  errMessage: " "
+  errMessage: " ",
+  latLng: []
 };
 
 export default function userReducer(state = initialState, action) {
@@ -50,6 +75,17 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state,
         users: action.payload.data
+      };
+
+    case DELETE_USERS:
+      return {
+        ...state,
+        users: action.payload.data
+      };
+    case GET_LOC:
+      return {
+        ...state,
+        latLng: action.payload.data
       };
     default:
       return state;

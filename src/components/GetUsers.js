@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getUsers } from "../ducks/reducers/userReducer";
+import { getUsers, deleteUsers } from "../ducks/reducers/userReducer";
 
 class GetUser extends Component {
   componentDidMount() {
@@ -17,6 +17,10 @@ class GetUser extends Component {
           {users.email}
           <br />
           {users.messages}
+          <button onClick={() => this.props.deleteUsers(users.user_id)}>
+            Delete
+          </button>
+          <br />
         </div>
       );
     });
@@ -28,5 +32,5 @@ const mapStateToProps = state => state;
 
 export default connect(
   mapStateToProps,
-  { getUsers }
+  { getUsers, deleteUsers }
 )(GetUser);

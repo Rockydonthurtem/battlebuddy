@@ -23,7 +23,21 @@ const postUsers = (req, res) => {
       res.status(500).send({ errorMessage: "Come back later" });
     });
 };
+
+const deleteUsers = (req, res) => {
+  const db = req.app.get("db");
+  db.delete_users([req.params.id])
+    .then(response => {
+      console.log(response);
+      res.sendStatus(200);
+    })
+    .catch(err => {
+      res.status(500).send({ errorMessage: "Could not complete delete" });
+      console.log(err);
+    });
+};
 module.exports = {
   getUsers,
-  postUsers
+  postUsers,
+  deleteUsers
 };
