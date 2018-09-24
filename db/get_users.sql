@@ -1,2 +1,2 @@
-Select *
+SELECT *
 from users;

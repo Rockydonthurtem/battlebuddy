@@ -24,7 +24,7 @@ class GetUser extends Component {
         </div>
       );
     });
-    return <div>{show}</div>;
+    return <h1>{show}</h1>;
   }
 }
 

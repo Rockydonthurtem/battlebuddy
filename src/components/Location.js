@@ -5,7 +5,6 @@ import PlacesAutocomplete, {
 } from "react-places-autocomplete";
 import { connect } from "react-redux";
 import { getLoc } from "../ducks/reducers/userReducer";
-import axios from "axios";
 
 class Location extends React.Component {
   constructor(props) {
