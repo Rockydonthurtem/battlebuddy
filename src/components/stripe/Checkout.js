@@ -1,21 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 import axios from "axios";
 import StripeCheckout from "react-stripe-checkout";
 
 import STRIPE_PUBLISHABLE from "../../constants/stripe";
-// import STRIPE_PUBLISHABLE from "../../../server/constants/stripe";
 import PAYMENT_SERVER_URL from "../../constants/server";
-// import PAYMENT_SERVER_URL from "../../../server/constants/server";
 
 const CURRENCY = "USD";
 
-const fromUsdToCent = amount => parseInt(amount * 10, 10);
+const fromUsdToCent = amount => parseInt(amount * 100);
 
 const successPayment = data => {
+  console.log(data);
   alert("Payment Successful");
 };
 
 const errorPayment = data => {
+  console.log(data);
   alert("Payment Error");
 };
 
@@ -25,7 +25,7 @@ const onToken = (amount, description) => token =>
       description,
       source: token.id,
       currency: CURRENCY,
-      amount: fromUsdToCent(amount)
+      amount: fromUsdToCent(1)
     })
     .then(successPayment)
     .catch(errorPayment);

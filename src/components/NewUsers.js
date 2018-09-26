@@ -23,62 +23,64 @@ class NewUser extends Component {
     console.log(this.state);
     const { name, email, address, phone_number } = this.state;
     return (
-      <div className="newUser">
-        <h3>Become a Battle Buddy</h3>
-        Name
-        <br />
-        <input
-          onChange={e => this.setState({ name: e.target.value })}
-          placeholder="Name"
-          type="text"
-          value={name}
-        />
-        <br />
-        <br />
-        Email
-        <br />
-        <input
-          onChange={e => this.setState({ email: e.target.value })}
-          type="text"
-          placeholder="email"
-          value={email}
-        />
-        <br />
-        <br />
-        Address
-        <br />
-        <input
-          placeholder="address"
-          onChange={e => this.setState({ address: e.target.value })}
-          type="text"
-          value={address}
-        />
-        <br />
-        <br />
-        Phone Number
-        <br />
-        <input
-          onChange={e => this.setState({ phone_number: e.target.value })}
-          type="text"
-          placeholder="phone_number"
-          value={phone_number}
-        />
-        <br />
-        <br />
-        <button
-          onClick={() =>
-            this.props.newUsers(name, email, address, phone_number)
-          }
-        >
-          Submit
-        </button>
-        <br />
-        <br />
-        {/* <div className="auth0">
+      <div className="overall">
+        <div className="newUser">
+          <h3>Become a Battle Buddy</h3>
+          Name
+          <br />
+          <input
+            onChange={e => this.setState({ name: e.target.value })}
+            placeholder="Name"
+            type="text"
+            value={name}
+          />
+          <br />
+          <br />
+          Email
+          <br />
+          <input
+            onChange={e => this.setState({ email: e.target.value })}
+            type="text"
+            placeholder="email"
+            value={email}
+          />
+          <br />
+          <br />
+          Address
+          <br />
+          <input
+            placeholder="address"
+            onChange={e => this.setState({ address: e.target.value })}
+            type="text"
+            value={address}
+          />
+          <br />
+          <br />
+          Phone Number
+          <br />
+          <input
+            onChange={e => this.setState({ phone_number: e.target.value })}
+            type="text"
+            placeholder="phone_number"
+            value={phone_number}
+          />
+          <br />
+          <br />
+          <button
+            onClick={() =>
+              this.props.newUsers(name, email, address, phone_number)
+            }
+          >
+            Submit
+          </button>
+          <br />
+          <br />
+          {/* <div className="auth0">
           <button onClick={() => this.handleAuth0()}>Auth0 login</button>
         </div>
         <h3>{this.props.authid}</h3> */}
-        <Location />
+          <Location />
+        </div>
         <Cluster />
       </div>
     );

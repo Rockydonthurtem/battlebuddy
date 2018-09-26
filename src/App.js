@@ -25,7 +25,7 @@ class App extends Component {
           <div>
             <Header />
             {route}
-            <p>TURN ON LESS SECURE</p>
+            {/* <p>TURN ON LESS SECURE</p> */}
             {/* <Location /> */}
             {/* <Map /> */}
             {/* <Cluster /> */}

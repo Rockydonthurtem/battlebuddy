@@ -44,6 +44,13 @@ class Journal extends Component {
           type="text"
           placeholder="Title"
         />
+        this was done by lorem 65 Lorem ipsum dolor sit, amet consectetur
+        adipisicing elit. Animi architecto neque cum non laborum nostrum
+        mollitia vel, porro dolore nesciunt eveniet omnis quisquam sapiente quae
+        quasi cumque, tenetur distinctio ratione quam amet temporibus. Iusto non
+        voluptate dolore eum laboriosam ratione a ab quo facere odit dicta,
+        alias natus enim fugit iste deserunt vero provident id error quia
+        reiciendis optio molestiae? Vero dolore esse labore atque.
         <br />
         <br />
         <textarea

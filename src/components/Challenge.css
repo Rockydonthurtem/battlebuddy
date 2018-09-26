@@ -1,0 +1,115 @@
+.headup {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+.dcod {
+  height: 80vh;
+  width: 100%;
+  align-items: center;
+  background-image: url("../img/Ranger.jpg");
+  color: white;
+  background-size: cover;
+}
+.dmow {
+  height: 33.3%;
+  width: 100%;
+  border: 1px solid black;
+}
+.daom {
+  height: 33.3%;
+  width: 100%;
+  border: 1px solid black;
+}
+.cod {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.ecoddiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+}
+.ecod {
+  margin: 15% 1% 0 1%;
+  background-color: rgba(128, 128, 128, 0.397);
+  width: 100%;
+}
+
+.mow {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.dmow {
+  height: 80vh;
+  width: 100%;
+  align-items: center;
+  background-image: url("../img/marines.jpg");
+  color: white;
+  background-size: cover;
+  /* display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-start; */
+}
+.emowdiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+}
+.emow {
+  margin: 15% 1% 0 1%;
+  background-color: rgba(128, 128, 128, 0.397);
+  width: 100%;
+}
+.daom {
+  height: 80vh;
+  width: 100%;
+  align-items: center;
+  background-image: url("../img/us-army-soldiers-army-men-54098.jpeg");
+  color: white;
+  background-size: cover;
+}
+.eaomdiv {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  align-content: center;
+}
+.eaom {
+  margin: 15% 1% 0 1%;
+  background-color: rgba(128, 128, 128, 0.397);
+  width: 100%;
+}
+.aom {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

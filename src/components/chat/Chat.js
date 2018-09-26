@@ -41,9 +41,7 @@ class Chat extends React.Component {
             <div className="col-4">
               <div className="card-chat">
                 <div className="card-body">
-                  <div className="card-title">
-                    <h4>Send your traffic</h4>
-                  </div>
+                  <div className="card-title" />
                   {/* <hr /> */}
                   <div className="messages">
                     {this.state.messages.map(message => {

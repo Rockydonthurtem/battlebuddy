@@ -1,6 +1,8 @@
 const stripe = require("../constants/stripe");
 
 const postStripeCharge = res => (stripeErr, stripeRes) => {
+  console.log("This is stripErr", stripeErr);
+  console.log("This is stripeRes", stripeRes);
   if (stripeErr) {
     res.status(500).send({ error: stripeErr });
   } else {
@@ -17,6 +19,7 @@ const paymentApi = app => {
   });
 
   app.post("/", (req, res) => {
+    console.log("THIS IS post/", req.body);
     stripe.charges.create(req.body, postStripeCharge(res));
   });
 
