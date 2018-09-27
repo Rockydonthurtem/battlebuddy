@@ -1,0 +1,26 @@
+/* .journal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: stretch; */
+/* } */
+
+.storybox {
+  border: solid black 1px;
+  border-style: inset;
+  width: 50%;
+  contain: content;
+}
+.storytitle {
+  margin: 0 0 0 10%;
+}
+.storybody {
+  height: 20vh;
+  width: 50vh;
+  margin: 0 0 0 2%;
+}
+.storybutton {
+  margin: 0 0 3% 13%;
+}

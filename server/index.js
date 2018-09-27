@@ -1,4 +1,6 @@
 require("dotenv").config();
+const path = require("path");
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const port = 3001;
@@ -33,10 +35,17 @@ const {
   logOut
 } = require("./controllers/userController");
 const { postLatLng, getLatLng } = require("./controllers/location_controller");
-const { getStory, postStory } = require("./controllers/story_controller");
+const {
+  getStory,
+  postStory,
+  deletePost
+} = require("./controllers/story_controller");
 //-----------------------------------------------------------
 app.use(bodyParser.json());
 // app.use(cors());
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 //-----------------------Auth0-Session---------------------------------------
 app.use(
   session({
@@ -94,7 +103,7 @@ passport.deserializeUser((obj, done) => {
 app.get(
   "/login",
   passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/",
+    successRedirect: process.env.REACT_APP_SUCCESS,
     failureRedirect: "/ "
   })
 );
@@ -117,7 +126,16 @@ app.get("/api/loc", getLatLng);
 //-------------------Story----------------------------------------
 app.get("/api/story", getStory);
 app.post("/api/story", postStory);
+//-------------------Delete Post----------------------------------
+app.delete("/api/deletePost/:id", deletePost);
+//-------------------BulletinBoard--------------------------------
+// app.get("/api/bulletinboard");
+//-------------------Activity-------------------------------------
+// app.post("/api/activity", postActivity);
+//-------------------Activity-------------------------------------
+// app.post('/api/services',postServices);
 //-------------------Twilio endpoints-----------------------------
+
 app.get("/api/text", (req, res) => {
   res.send("Welcome to the express Server");
   const { recipient, textmessage } = req.query;

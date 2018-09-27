@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import "./Journal.css";
+import { connect } from "react-redux";
 
 class Journal extends Component {
   constructor() {
@@ -10,47 +12,54 @@ class Journal extends Component {
       story: []
     };
     this.postStory = this.postStory.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
     axios.get("/api/story").then(response => {
-      console.log(response);
+      // console.log(response);
       this.setState({ story: response.data });
     });
   }
 
   postStory(title, body) {
     axios.post("/api/story", { title, body }).then(response => {
-      console.log(response);
+      // console.log(response);
+      this.setState({ story: response.data });
+    });
+  }
+  handleDelete(id) {
+    axios.delete(`/api/deletePost/${id}`).then(response => {
+      // console.log(response);
       this.setState({ story: response.data });
     });
   }
   render() {
     console.log(this.state);
+    console.log(this.props);
     let newStory = this.state.story.map((e, i) => (
       <p className="storybox" key={i}>
         {e.title}
         <br />
         {e.body}
+        <br />
+        {this.props.user.authUser.admin && (
+          <button onClick={() => this.handleDelete(e.map_id)}>Delete</button>
+        )}
       </p>
     ));
     return (
       <div>
-        {newStory}
+        <div className="journal">
+          <div> {newStory}</div>
+        </div>
         <br />
-        <br />
+        <p />
         <input
           className="storytitle"
           onChange={e => this.setState({ title: e.target.value })}
           type="text"
           placeholder="Title"
         />
-        this was done by lorem 65 Lorem ipsum dolor sit, amet consectetur
-        adipisicing elit. Animi architecto neque cum non laborum nostrum
-        mollitia vel, porro dolore nesciunt eveniet omnis quisquam sapiente quae
-        quasi cumque, tenetur distinctio ratione quam amet temporibus. Iusto non
-        voluptate dolore eum laboriosam ratione a ab quo facere odit dicta,
-        alias natus enim fugit iste deserunt vero provident id error quia
-        reiciendis optio molestiae? Vero dolore esse labore atque.
         <br />
         <br />
         <textarea
@@ -63,6 +72,7 @@ class Journal extends Component {
           type="text"
           placeholder="Share your story"
         />
+
         <br />
         <button
           className="storybutton"
@@ -74,5 +84,5 @@ class Journal extends Component {
     );
   }
 }
-
-export default Journal;
+const mapStateToProps = state => state;
+export default connect(mapStateToProps)(Journal);

@@ -54,7 +54,7 @@
 }
 .chat {
   height: 93vh;
-  width: 100%;
+  width: 99%;
   padding: 1% 0 0% 1%;
   background-image: url("./img/kevlar.jpg");
   background-image: no-repeat center center fixed;
@@ -109,23 +109,27 @@ a:hover {
 }
 .overall {
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
   align-content: center;
 }
+/* .cluster {
+  height: 95vh;
+} */
 .newUser {
-  height: 50vh;
+  height: 95vh;
   background-image: url("./img/firemancarry.jpg");
   background-repeat: no-repeat;
   background-size: 50vh;
-  width: 100%;
+  width: 50%;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-size: 2vh;
+  justify-content: flex-end;
 }
 .textMessages {
   height: 100vh;
@@ -135,21 +139,7 @@ a:hover {
   width: 5%;
   margin: 0 0 0 1%;
 }
-.storybox {
-  border: solid black 1px;
-  border-style: inset;
-}
-.storytitle {
-  margin: 0 0 0 10%;
-}
-.storybody {
-  height: 20vh;
-  width: 99vh;
-  margin: 0 0 0 10%;
-}
-.storybutton {
-  margin: 0 0 0 10%;
-}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

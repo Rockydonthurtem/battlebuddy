@@ -1,0 +1,40 @@
+.bulletin {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+.activity {
+  height: 80vh;
+  width: 40%;
+  border: 1px solid black;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: yellow;
+}
+.services {
+  height: 80vh;
+  width: 40%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.dates {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}

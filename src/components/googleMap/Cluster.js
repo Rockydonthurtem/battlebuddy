@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Map from "./Map.css";
 const { compose, withProps, withHandlers } = require("recompose");
 const {
   withScriptjs,
@@ -16,7 +17,7 @@ const MapWithAMarkerClusterer = compose(
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyDCotZ7y9Nqx8b08RkWG87dGQ4oduLKqIk&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `400px` }} />,
+    containerElement: <div style={{ height: `955px` }} />,
     mapElement: <div style={{ height: `100%` }} />
   }),
   withHandlers({
@@ -71,7 +72,7 @@ class Cluster extends React.PureComponent {
 
   render() {
     return (
-      <div>
+      <div style={{ width: "50%" }}>
         <MapWithAMarkerClusterer markers={this.state.markers} />
       </div>
     );

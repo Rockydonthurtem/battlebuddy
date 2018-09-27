@@ -50,7 +50,8 @@ const getOneUser = (req, res) => {
 };
 const logOut = (req, res) => {
   req.session.destroy(() => {
-    res.redirect("http://localhost:3000/#/firstpage");
+    // res.redirect("http://localhost:3000/#/firstpage");
+    res.redirect(process.env.REACT_APP_DESTROY);
   });
 };
 const getAdmin = (req, res) => {

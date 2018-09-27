@@ -35,6 +35,15 @@ class Header extends Component {
     console.log(this.state);
     return this.state.loggedIn && this.state.admin === 1 ? (
       <div className="header">
+        <button
+          onClick={() =>
+            alert(
+              `${"Please dial 911 or Crisis Hotline, if you feel like you will hurt yourself or others or need immediately help, "}`
+            )
+          }
+        >
+          9 Line/Help
+        </button>
         <Link to="/chat">
           <p>Chat</p>
         </Link>
@@ -44,9 +53,10 @@ class Header extends Component {
         <Link to="/journal">Journal</Link>
         <Link to="/resources">Resources</Link>
         <Link to="/newusers">Become a Buddy</Link>
-        <Link to="/bulletin">Bulletin Board</Link>
+        <Link to="/bulletin">Bulletin Board/Donation</Link>
         <Link to="/donate">Donate</Link>
-        <a href="http://localhost:3001/logout">Logout</a>
+        {/* <a href="http://localhost:3001/logout">Logout</a> */}
+        <a href="process.env.REACT_APP_LOGOUT">Logout</a>
         <Link to="/text">Twilio</Link>
         {/* <Link to="/checkout">Checkout</Link> */}
         <Link to="/nodemailer">Nodemailer</Link>
@@ -54,30 +64,49 @@ class Header extends Component {
       </div>
     ) : this.state.loggedIn && !this.state.admin ? (
       <div className="header">
+        <button
+          onClick={() =>
+            alert(
+              `${"Please dial 911 or Crisis Hotline, if you feel like you will hurt yourself or others or need immediately help, "}`
+            )
+          }
+        >
+          9 Line/Help
+        </button>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/chat">
           <p>Chat</p>
         </Link>
         <Link to="/challenge">Challenge</Link>
-
         <Link to="/resources">Resources</Link>
         <Link to="/journal">Journal</Link>
         <Link to="/newusers">Become a Buddy</Link>
-        <Link to="/bulletin">Bulletin Board</Link>
+        <Link to="/bulletin">Bulletin Board/Donation</Link>
         <Link to="/donate">Donate</Link>
-
-        <a href="http://localhost:3001/logout">Logout</a>
+        {/* <a href="http://localhost:3001/logout">Logout</a> */}
+        <a href="process.env.REACT_APP_LOGOUT">Logout</a>{" "}
+        {/* <a href="http://localhost:3001/logout">Logout</a> */}
       </div>
     ) : (
       <div className="header">
+        <button
+          onClick={() =>
+            alert(
+              `${"Please dial 911 or Crisis Hotline, if you feel like you will hurt yourself or others or need immediately help, "}`
+            )
+          }
+        >
+          9Line/Help
+        </button>
         <Link to="/about">About</Link>
         <Link to="/chat">
           <p>Chat</p>
           {/* <Link to="/firstpage">FirstPage</Link> */}
         </Link>
 
-        <a href="http://localhost:3001/login">Login</a>
+        {/* <a href="http://localhost:3001/login">Login</a> */}
+        <a href={process.env.REACT_APP_LOGINALL}>Login</a>
       </div>
     );
   }

@@ -104,7 +104,7 @@ export default function userReducer(state = initialState, action) {
         ...state,
         latLng: action.payload.data
       };
-    case GET_ONE_USER:
+    case `${GET_ONE_USER}_FULFILLED`:
       return {
         ...state,
         authUser: action.payload.data
