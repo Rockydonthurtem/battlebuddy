@@ -21,9 +21,9 @@ class Journal extends Component {
     });
   }
 
-  postStory(title, body) {
-    axios.post("/api/story", { title, body }).then(response => {
-      // console.log(response);
+  postStory(title, body, id) {
+    axios.post("/api/story", { title, body, id }).then(response => {
+      console.log(response);
       this.setState({ story: response.data });
     });
   }
@@ -76,7 +76,13 @@ class Journal extends Component {
         <br />
         <button
           className="storybutton"
-          onClick={() => this.postStory(this.state.title, this.state.body)}
+          onClick={() =>
+            this.postStory(
+              this.state.title,
+              this.state.body,
+              this.props.user.authUser.user_id
+            )
+          }
         >
           Share
         </button>

@@ -1,0 +1,48 @@
+.header {
+  /* display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: space-around;
+    background-color: rgba(128, 128, 128, 0.63);
+    text-decoration: none; */
+  display: none;
+  position: absolute;
+  background-color: slategray;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  justify-content: flex-end;
+}
+.header a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropbtn {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  justify-content: flex-end;
+  margin: 3px;
+  border: 1px solid white;
+  z-index: 199;
+}
+.dropdown {
+  /* float: right; */
+  display: flex;
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  z-index: 100;
+}
+.dropdown:hover .header {
+  display: block;
+}
+.header a:hover {
+  background-color: #ddd;
+}

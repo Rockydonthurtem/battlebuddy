@@ -1,10 +1,14 @@
 .home1 {
-  background-image: url("../img/FSNUAQ.jpg");
+  /* background-image: url("../img/Armed_Forces.png"); */
+  background-image: center no-repeat;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  height: 90vh;
+  height: 80vh;
+  width: 100vw;
+  /* margin: 1%; */
+}
+.home2 {
+  height: 100vh;
   width: auto;
-  color: white;
-  margin: 1%;
 }

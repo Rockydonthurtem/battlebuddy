@@ -1,5 +1,5 @@
 require("dotenv").config();
-const path = require("path");
+// const path = require("path");
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -25,7 +25,7 @@ configureRoutes(app);
 const accountSid = process.env.SID;
 const authToken = process.env.AUTH_TOKEN;
 const client = new twilio(accountSid, authToken);
-//-------------------Controllers----------------------
+//-------------------Users Controllers----------------------
 const {
   getAdmin,
   getUsers,
@@ -34,18 +34,24 @@ const {
   getOneUser,
   logOut
 } = require("./controllers/userController");
+//-------------------Location Controller--------------------------
 const { postLatLng, getLatLng } = require("./controllers/location_controller");
 const {
   getStory,
   postStory,
   deletePost
+  //------------------------Bulletin Controller------------------
 } = require("./controllers/story_controller");
+const {
+  getBulletin,
+  postActivity,
+  postServices,
+  deleteActivityPost,
+  updateActivityPost
+} = require("./controllers/bulletin_controller");
 //-----------------------------------------------------------
 app.use(bodyParser.json());
 // app.use(cors());
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-});
 //-----------------------Auth0-Session---------------------------------------
 app.use(
   session({
@@ -129,11 +135,13 @@ app.post("/api/story", postStory);
 //-------------------Delete Post----------------------------------
 app.delete("/api/deletePost/:id", deletePost);
 //-------------------BulletinBoard--------------------------------
-// app.get("/api/bulletinboard");
-//-------------------Activity-------------------------------------
-// app.post("/api/activity", postActivity);
-//-------------------Activity-------------------------------------
-// app.post('/api/services',postServices);
+app.get("/api/bulletinboard", getBulletin);
+// //-------------------Activity-------------------------------------
+app.post("/api/activity", postActivity);
+app.delete("/api/deleteActivity/:id", deleteActivityPost);
+app.put(`/api/updateActivity/:id`, updateActivityPost);
+// //-------------------Services-------------------------------------
+app.post("/api/services", postServices);
 //-------------------Twilio endpoints-----------------------------
 
 app.get("/api/text", (req, res) => {
@@ -204,6 +212,9 @@ app.post("/api/send", (req, res, next) => {
     }
   });
 });
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../build/index.html"));
+// });
 //-------------------Server---------------------------------------
 server = app.listen(port, () => {
   console.log(`Listening on port ${3001}`);

@@ -17,7 +17,7 @@ const MapWithAMarkerClusterer = compose(
     googleMapURL:
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyDCotZ7y9Nqx8b08RkWG87dGQ4oduLKqIk&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
-    containerElement: <div style={{ height: `955px` }} />,
+    containerElement: <div style={{ height: `1005px` }} />,
     mapElement: <div style={{ height: `100%` }} />
   }),
   withHandlers({
@@ -34,6 +34,7 @@ const MapWithAMarkerClusterer = compose(
     defaultZoom={5}
     defaultCenter={{ lat: 28.0391667, lng: -80.19179020000001 }}
   >
+    {console.log(props)}
     <MarkerClusterer
       onClick={props.onMarkerClustererClick}
       averageCenter
@@ -65,7 +66,7 @@ class Cluster extends React.PureComponent {
   }
   componentDidMount() {
     axios.get("/api/loc").then(res => {
-      console.log(res);
+      console.log("/api/loc", res);
       this.setState({ markers: res.data });
     });
   }

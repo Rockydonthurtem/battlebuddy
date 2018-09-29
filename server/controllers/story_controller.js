@@ -11,9 +11,9 @@ module.exports = {
   },
   postStory: (req, res) => {
     const db = req.app.get("db");
-    const { title, body } = req.body;
+    const { title, body, id } = req.body;
 
-    db.story_create([title, body])
+    db.story_create([title, body, id])
       .then(response => {
         res.status(200).send(response);
       })

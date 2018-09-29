@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Bulletinboard.css";
+import { connect } from "react-redux";
 
-export default class Bulletinboard extends Component {
+class Bulletinboard extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,6 +18,8 @@ export default class Bulletinboard extends Component {
     };
     this.handleActivity = this.handleActivity.bind(this);
     this.handleServices = this.handleServices.bind(this);
+    // this.handleUpdateActivity = this.handleUpdateActivity.bind(this);
+    this.handleDeleteActivity = this.handleDeleteActivity.bind(this);
   }
   componentDidMount() {
     axios.get("/api/bulletinboard").then(response => {
@@ -24,9 +27,27 @@ export default class Bulletinboard extends Component {
       this.setState({ bulletinboard: response.data });
     });
   }
+  // handleUpdateActivity(id, date, location, description) {
+  //   axios
+  //     .put(`/api/updateActivity/${id}`, {
+  //       date,
+  //       location,
+  //       description
+  //     })
+  //     .then(response => {
+  //       console.log(response);
+  //       this.setState({ activity: response.data });
+  //     });
+  // }
+  handleDeleteActivity(id) {
+    axios.delete(`/api/deleteActivity/${id}`).then(response => {
+      console.log(response);
+      this.setState({ activity: response.data });
+    });
+  }
   handleActivity(date, location, description) {
     axios
-      .post(`/api/activity, ${(date, location, description)}`)
+      .post(`/api/activity`, { date, location, description })
       .then(response => {
         console.log(response);
         this.setState({ activity: response.data });
@@ -34,18 +55,49 @@ export default class Bulletinboard extends Component {
   }
   handleServices(date, who, location, what) {
     axios
-      .post(`/api/services, ${(date, who, location, what)}`)
+      .post(`/api/services`, { date, who, location, what })
       .then(response => {
         console.log(response);
         this.setState({ services: response.data });
       });
   }
   render() {
+    console.log(this.state);
+    console.log(this.props);
+    let news = this.state.bulletinboard.map((e, i) => {
+      return (
+        <div key={i}>
+          {e.description}
+          {e.service}
+          {(this.props.user.authUser.user_id == e.user_id ||
+            this.props.user.authUser.admin) && (
+            <button onClick={() => this.handleDeleteActivity(e.activity_id)}>
+              Delete
+            </button>
+          )}
+          {/* <button
+            onClick={() =>
+              this.handleUpdateActivity(
+                e.activity_id,
+                e.date,
+                e.location,
+                e.description
+              )
+            }
+          >
+            Edit
+          </button> */}
+        </div>
+      );
+    });
     return (
       <div className="forReact">
         {/* --------------------------------------------------------------- */}
         <div className="bulletin">
-          <div className="activity">Activity</div>
+          <div className="activity">
+            Activity
+            {news}
+          </div>
           <div className="services">Services</div>
         </div>
         {/* ----------------------------------------------------------------- */}
@@ -136,3 +188,5 @@ export default class Bulletinboard extends Component {
     );
   }
 }
+const mapStateToProps = state => state;
+export default connect(mapStateToProps)(Bulletinboard);

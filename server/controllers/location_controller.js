@@ -14,10 +14,11 @@ const postLatLng = (req, res) => {
 };
 
 const getLatLng = (req, res) => {
+  console.log("lalal");
   const db = req.app.get("db");
   db.get_lat_lng()
     .then(latlng => {
-      // console.log(latlng);
+      console.log(latlng);
       res.status(200).send(latlng);
     })
     .catch(err => res.status(500).send("err"));

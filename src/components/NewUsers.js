@@ -47,6 +47,7 @@ class NewUser extends Component {
           <br />
           <br />
           Address
+          <Location />
           <br />
           <input
             placeholder="address"
@@ -79,7 +80,6 @@ class NewUser extends Component {
           <button onClick={() => this.handleAuth0()}>Auth0 login</button>
         </div>
         <h3>{this.props.authid}</h3> */}
-          <Location />
         </div>
         <Cluster />
       </div>

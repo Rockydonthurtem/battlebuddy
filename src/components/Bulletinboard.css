@@ -1,3 +1,6 @@
+.forReact {
+  /* background-image: url("../img/bulletin.jpg"); */
+}
 .bulletin {
   display: flex;
   flex-direction: row;
@@ -5,6 +8,7 @@
   justify-content: center;
   align-items: stretch;
   align-content: center;
+  margin: 10vh 0 0 0;
 }
 .activity {
   height: 80vh;
@@ -29,6 +33,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  background-color: greenyellow;
 }
 .dates {
   display: flex;
