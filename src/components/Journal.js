@@ -48,44 +48,46 @@ class Journal extends Component {
       </p>
     ));
     return (
-      <div>
+      <div className="overallJournal">
         <div className="journal">
           <div> {newStory}</div>
         </div>
         <br />
         <p />
-        <input
-          className="storytitle"
-          onChange={e => this.setState({ title: e.target.value })}
-          type="text"
-          placeholder="Title"
-        />
-        <br />
-        <br />
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          className="storybody"
-          onChange={e => this.setState({ body: e.target.value })}
-          type="text"
-          placeholder="Share your story"
-        />
+        <div className="bottomJournal">
+          <input
+            className="storytitle"
+            onChange={e => this.setState({ title: e.target.value })}
+            type="text"
+            placeholder="Title"
+          />
+          <br />
+          <br />
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="10"
+            className="storybody"
+            onChange={e => this.setState({ body: e.target.value })}
+            type="text"
+            placeholder="Share your story"
+          />
 
-        <br />
-        <button
-          className="storybutton"
-          onClick={() =>
-            this.postStory(
-              this.state.title,
-              this.state.body,
-              this.props.user.authUser.user_id
-            )
-          }
-        >
-          Share
-        </button>
+          <br />
+          <button
+            className="storybutton"
+            onClick={() =>
+              this.postStory(
+                this.state.title,
+                this.state.body,
+                this.props.user.authUser.user_id
+              )
+            }
+          >
+            Share
+          </button>
+        </div>
       </div>
     );
   }

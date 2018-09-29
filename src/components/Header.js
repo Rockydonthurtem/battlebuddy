@@ -56,13 +56,13 @@ class Header extends Component {
           <Link to="/resources">Resources</Link>
           <Link to="/newusers">Become a Buddy</Link>
           <Link to="/bulletin">Bulletin Board/Donation</Link>
-          {/* <Link to="/donate">Donate</Link> */}
+          <Link to="/donate">Donate</Link>
           <a href="http://localhost:3001/logout">Logout</a>
           {/* <a href={process.env.REACT_APP_LOGOUT}>Logout</a> */}
-          <Link to="/text">Twilio</Link>
+          <Link to="/text">Admin</Link>
           {/* <Link to="/checkout">Checkout</Link> */}
-          <Link to="/nodemailer">Nodemailer</Link>
-          <Link to="/getusers">GetUsers</Link>
+          {/* <Link to="/nodemailer">Nodemailer</Link> */}
+          {/* <Link to="/getusers">GetUsers</Link> */}
         </div>
       </div>
     ) : this.state.loggedIn && !this.state.admin ? (
@@ -86,7 +86,7 @@ class Header extends Component {
           <Link to="/journal">Journal</Link>
           <Link to="/newusers">Become a Buddy</Link>
           <Link to="/bulletin">Bulletin Board/Donation</Link>
-          {/* <Link to="/donate">Donate</Link> */}
+          <Link to="/donate">Donate</Link>
           <a href="http://localhost:3001/logout">Logout</a>
           {/* <a href={process.env.REACT_APP_LOGOUT}>Logout</a> */}
         </div>

@@ -67,8 +67,12 @@ class Bulletinboard extends Component {
     let news = this.state.bulletinboard.map((e, i) => {
       return (
         <div key={i}>
+          {e.date}
+          <br />
           {e.description}
-          {e.service}
+          <br />
+          {e.location}
+          <br />
           {(this.props.user.authUser.user_id == e.user_id ||
             this.props.user.authUser.admin) && (
             <button onClick={() => this.handleDeleteActivity(e.activity_id)}>
@@ -104,7 +108,7 @@ class Bulletinboard extends Component {
 
         <div className="dates">
           {/* ----------------------------------------------------------------- */}
-          <div>
+          <div className="activitytext">
             <input
               onChange={e => this.setState({ date: e.target.value })}
               type="date"
@@ -123,9 +127,7 @@ class Bulletinboard extends Component {
               id=""
               cols="30"
               rows="10"
-            >
-              Desc
-            </textarea>
+            />
             <br />
             <button
               onClick={() =>
@@ -142,45 +144,47 @@ class Bulletinboard extends Component {
           {/* ----------------------------------------------------------------- */}
           <div>
             <br />
-            <input
-              onChange={e => this.setState({ date: e.target.value })}
-              type="date"
-              placeholder="date"
-            />
-            <br />
-            <input
-              onChange={e => this.setState({ who: e.target.value })}
-              type="text"
-              placeholder="who"
-            />
-            <br />
-            <input
-              onChange={e => this.setState({ location: e.target.value })}
-              type="text"
-              placeholder="location"
-            />
-            <br />
-            <textarea
-              onChange={e => this.setState({ what: e.target.value })}
-              name="what"
-              id=""
-              cols="30"
-              rows="10"
-              placeholder="what"
-            />
-            <br />
-            <button
-              onClick={() =>
-                this.handleServices(
-                  this.state.date,
-                  this.state.who,
-                  this.state.location,
-                  this.state.what
-                )
-              }
-            >
-              Submit
-            </button>
+            <div className="servicestext">
+              <input
+                onChange={e => this.setState({ date: e.target.value })}
+                type="date"
+                placeholder="date"
+              />
+              <br />
+              <input
+                onChange={e => this.setState({ who: e.target.value })}
+                type="text"
+                placeholder="who"
+              />
+              <br />
+              <input
+                onChange={e => this.setState({ location: e.target.value })}
+                type="text"
+                placeholder="location"
+              />
+              <br />
+              <textarea
+                onChange={e => this.setState({ what: e.target.value })}
+                name="what"
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="what"
+              />
+              <br />
+              <button
+                onClick={() =>
+                  this.handleServices(
+                    this.state.date,
+                    this.state.who,
+                    this.state.location,
+                    this.state.what
+                  )
+                }
+              >
+                Submit
+              </button>
+            </div>
           </div>
           {/* -------------------------------------------------------------- */}
         </div>

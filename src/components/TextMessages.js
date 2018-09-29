@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Nodemailer from "./Nodemailer";
 
 class TextMessages extends Component {
   constructor() {
@@ -57,6 +58,9 @@ class TextMessages extends Component {
           <div style={spacer} />
           <button onClick={() => this.sendText()}> Send Text </button>
         </div>
+        <br />
+        <h2>Send Email</h2>
+        <Nodemailer />
       </div>
     );
   }

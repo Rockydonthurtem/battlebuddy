@@ -10,7 +10,8 @@
 .storybox {
   border: solid black 1px;
   border-style: inset;
-  width: 50%;
+  width: 50vw;
+  background-color: white;
   contain: content;
 }
 .storytitle {
@@ -23,4 +24,17 @@
 }
 .storybutton {
   margin: 0 0 3% 13%;
+}
+.overallJournal {
+  background-image: url("../img/salute2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: center;
 }

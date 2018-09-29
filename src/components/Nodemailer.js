@@ -39,10 +39,12 @@ class Nodemailer extends Component {
         >
           <div className="form-group">
             <label for="name">Name</label>
+            <br />
             <input type="text" className="form-control" id="name" />
           </div>
           <div className="form-group">
             <label for="exampleInputEmail1">Email address</label>
+            <br />
             <input
               type="email"
               className="form-control"
@@ -51,7 +53,9 @@ class Nodemailer extends Component {
             />
           </div>
           <div className="form-group">
+            <br />
             <label for="message">Message</label>
+            <br />
             <textarea className="form-control" rows="5" id="message" />
           </div>
           <button type="submit" className="btn btn-primary">
