@@ -5,6 +5,7 @@ const TaskOfTheDay = () => {
   return (
     <div className="tod">
       <h1>Task of the day</h1>
+      <h4>Day 1</h4>
       <h2>
         Choose the order that best fits your schedule: <br />
         <br />

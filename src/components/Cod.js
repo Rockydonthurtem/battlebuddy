@@ -4,6 +4,7 @@ function Cod() {
   return (
     <div className="coday">
       <h1>Challenge of the Week</h1>
+      <h4>Week 1 Day 1</h4>
       <h2>
         Finish any day task that were left incomplete. <br />
         <br />

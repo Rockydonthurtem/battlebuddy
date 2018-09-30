@@ -5,6 +5,8 @@ const Mission = () => {
   return (
     <div className="mom">
       <h1>Mission of the Month</h1>
+
+      <h4>Month 1</h4>
       <h2>
         Introspection: at the end of each month analyze your strengths and
         weakness. Identify where you were success for the month and where you
