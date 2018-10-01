@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Map from "./Map.css";
 const { compose, withProps, withHandlers } = require("recompose");
 const {
   withScriptjs,
@@ -73,7 +72,7 @@ class Cluster extends React.PureComponent {
 
   render() {
     return (
-      <div style={{ width: "50%" }}>
+      <div className="cluster" style={{ width: "50%" }}>
         <MapWithAMarkerClusterer markers={this.state.markers} />
       </div>
     );

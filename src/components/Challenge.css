@@ -113,3 +113,29 @@
   align-items: center;
   align-content: center;
 }
+@media (max-width: 600px) {
+  .dcod {
+    z-index: 98;
+  }
+  .ecod {
+    font-size: 13px;
+    padding: 23vh 0 0 0;
+  }
+  .ecoddiv {
+    padding: 10vh 0 0 0;
+  }
+  .emow {
+    font-size: 13px;
+    padding: 23vh 0 0 0;
+  }
+  .emowdiv {
+    padding: 10vh 0 0 0;
+  }
+  .eaom {
+    font-size: 13px;
+    padding: 23vh 0 0 0;
+  }
+  .eaomdiv {
+    padding: 10vh 0 0 0;
+  }
+}

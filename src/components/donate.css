@@ -98,3 +98,12 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+@media (max-width: 600px) {
+  .salute {
+    width: auto;
+  }
+  .donate1 {
+    padding: 0 300px 0 0;
+    margin: 330px 20px 0 0;
+  }
+}

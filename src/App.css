@@ -63,6 +63,7 @@
   -o-background-size: cover;
   background-size: cover;
   z-index: -1;
+  cursor: pointer;
 }
 .messages {
   height: 60vh;
@@ -72,6 +73,7 @@
   z-index: 100;
   background-color: white;
   padding: 5px 0 0 0;
+  cursor: pointer;
 }
 
 a {
@@ -121,6 +123,7 @@ a:hover {
   background-size: cover;
   font-size: 2vh;
   justify-content: flex-end;
+  cursor: pointer;
 }
 .textMessages {
   height: 100vh;
@@ -130,7 +133,31 @@ a:hover {
   width: 5%;
   margin: 0 0 0 1%;
 }
-
+@media (max-width: 600px) {
+  .messages {
+    height: 40vh;
+    width: 80%;
+    cursor: none;
+    background-color: yellow;
+    margin: 80px 0 0 80px;
+  }
+}
+@media (max-width: 600px) {
+  .card-footer {
+    margin: 0 0 0 80px;
+  }
+}
+@media (max-width: 600px) {
+  .overall {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    padding: 0vw;
+  }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

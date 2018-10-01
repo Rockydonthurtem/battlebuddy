@@ -9,7 +9,17 @@
 .summit {
   background-image: url("../img/handup.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
+}
+@media (max-width: 600px) {
+  .summit {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
 }

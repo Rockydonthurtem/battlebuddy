@@ -38,3 +38,16 @@
   align-items: flex-start;
   align-content: center;
 }
+@media (max-width: 600px) {
+  .storytitle {
+    margin: 0 0 0 180px;
+    background-color: yellow;
+  }
+  .storybody {
+    margin: 0 0 0 55px;
+    background-color: yellow;
+  }
+  .storybutton {
+    margin: 0 0 0 230px;
+  }
+}
