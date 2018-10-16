@@ -11,7 +11,7 @@ const Challenge = () => {
           </Link>
           <div className="ecoddiv">
             <h3 className="ecod">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Lorem ipsum dolorer, sit amet consectetur adipisicing elit.
               Voluptatem veritatis dolore soluta nulla quisquam reiciendis
               tempore molestias repudiandae, minima animi autem alias ipsam
               maxime aut praesentium? Repellat nihil, veniam blanditiis dolorum
